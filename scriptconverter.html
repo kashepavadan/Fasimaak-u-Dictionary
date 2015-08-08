@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fasimāķu Dictionary</title>
+  </head>
+  <body>
+    <nav>
+    		<ul>
+        		<li><a href="/Fasimaak-u-Dictionary">Search Dictionary</a></li>
+	        	<li><a href="/Fasimaak-u-Dictionary/scriptconverter.html">Script Converter</a></li>
+        		<li><a href="/Fasimaak-u-Dictionary/addnew.html">Add New Word</a></li>
+    		</ul>
+    </nav>
+    <form id="asclat" onsubmit="return convert()">
+      <p>Convert ASCII to Latin: </p><input type="text" name="phrase" size="20" value="" required>
+      <input type="button" name="convert" value="Convert!" onclick="convert()">
+      <p id="result1"></p>
+    </form>
+    <form id="latnat" onsubmit="return convert2()">
+      <p>Convert Latin to Native: </p><input type="text" name="phrase" size="20" value="" required>
+      <input type="button" name="convert" value="Convert!" onclick="convert2()">
+      <p id="results2"></p>
+    </form>
+    <script>
+      function convert()
+      {
+        var text=document.forms["asclat"]["phrase"].value;
+        text=text.replace("NH", "Ñ");
+        text=text.replace("T'", "Ţ");
+        text=text.replace("K'", "Ķ");
+        text=text.replace("TH", "Ð");
+        text=text.replace("SH", "Š");
+        text=text.replace("II", "Ī");
+        text=text.replace("AA", "Ā");
+        text=text.replace("EE", "Ē");
+        text=text.replace("UU", "Ū");
+        
+        text=text.replace("nh", "ñ");
+        text=text.replace("t'", "ţ");
+        text=text.replace("k'", "ķ");
+        text=text.replace("th", "ð");
+        text=text.replace("sh", "š");
+        text=text.replace("ii", "ī");
+        text=text.replace("aa", "ā");
+        text=text.replace("ee", "ē");
+        text=text.replace("uu", "ū");
+        document.getElementById("results1").innerHTML = text;
+      }
+      function convert2()
+      {
+        document.getElementById("results2").innerHTML = "nice meme";
+      }
+    </script>
+  </body>
+</html>
