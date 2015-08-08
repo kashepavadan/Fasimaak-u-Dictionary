@@ -17,14 +17,14 @@
       <p id="results1"></p>
     </form>
     <form name="latnat" onsubmit="return convert2()">
-      <p>Convert Latin to Native: </p><input type="text" name="phrase" size="20" value="" required>
+      <p>Convert Latin to Native: </p><input type="text" name="phrase1" size="20" value="" required>
       <input type="button" name="convert" value="Convert!" onclick="convert2()">
       <p id="results2"></p>
     </form>
     <script>
       function convert()
       {
-        var text=document.forms["asclat"]["phrase"].value;
+        var text=document.getElementsByName("phrase")[0].value;
         text=text.replace("NH", "Ñ");
         text=text.replace("T'", "Ţ");
         text=text.replace("K'", "Ķ");
